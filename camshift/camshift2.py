@@ -9,6 +9,7 @@ parser.add_argument('image', type=str, help='path to image file')
 args = parser.parse_args()
 
 cap = cv.VideoCapture(args.image)
+# cap = cv.VideoCapture(0)
 
 # take first frame of the video
 ret,frame = cap.read()
