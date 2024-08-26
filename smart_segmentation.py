@@ -113,7 +113,7 @@ def skinsegmentation(video_capture, peak_hue):
     # Define the kernel size for the morphological operations
     kernel = np.ones((3, 3), np.uint8)  # 3x3 kernel of ones
 
-    # Alternatively, you can use the Opening operation directly
+    # Opening operation
     opened_mask = cv2.morphologyEx(skin_mask, cv2.MORPH_OPEN, kernel)
     
     skin = cv2.bitwise_and(frame, frame, mask=skin_mask)
@@ -125,7 +125,6 @@ def skinsegmentation(video_capture, peak_hue):
     if choice == ord('q'):
       break
     
-
 def main():
   video_capture = cv2.VideoCapture(0)
   nose_centre = viola_jones(video_capture)
